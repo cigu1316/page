@@ -1,10 +1,10 @@
-from django.shortcuts import render 
-
+from django.shortcuts import render ,HttpResponse
+from django.http import HttpResponse
 
   
 def home(request):
     
-    return render(request,"appwev/home.html")
+    return render(request,'appwev/home.html')
 
 def servicios(request):
     
@@ -12,12 +12,12 @@ def servicios(request):
 
 def tienda(request):
     
-    return render(request,'appwev/tienda.html')
+    return HttpResponse('tienda')
 
 def blog(request):
     
-    return render(request,'appwev/blog.html')
+    return HttpResponse('blog')
 
 def contacto(request):
     
-    return render (request,'appwev/contacto.html')
+    return HttpResponse ('contacto')
