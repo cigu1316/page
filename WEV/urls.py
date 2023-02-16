@@ -5,6 +5,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('appwev/ ', include('appwev.urls')),
+    path('',include('appwev.urls')),
+    
     
 ]
