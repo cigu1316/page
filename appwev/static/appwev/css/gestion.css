@@ -257,12 +257,12 @@ p {
 }
 
 a.link{
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
 }
 
 a.link:hover{
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgb(232, 239, 239);
 }
 
 .section-content{
@@ -277,3 +277,8 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
+
+.linksCategorias{
+  color: white!important;
+  text-decoration: underline;
+}  
