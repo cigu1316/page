@@ -1,0 +1,109 @@
+
+<html>
+
+<head>
+{% load static %}
+
+
+    <!-- Bootstrap -->
+    <link href="{% static 'appwev/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'appwev/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      
+        <span class="site-heading-lower">LIBRERIA KU-QUIN III</span>
+      </h1>
+
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home'%}">Gestión de Pedidos</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home'%}">Inicio</a>
+          </li>
+          <form class="form-inline my-2 my-lg-0" action="/buscar/" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> 
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<table class="table table-striped" style="color: white;">
+    <p></p>
+    <p></p>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+             <th scope="col">codigo</th>
+            <th scope="col">nombre</th>
+            <th scope="col">precio</th>
+          
+            
+            
+          </tr>
+        </thead>
+    <t/body>
+
+{% for producto in producto %} 
+        
+        <tr>
+            <th scope="row"></th>
+            <td>{{producto.codigo}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+                       
+        
+        </tr> 
+{% endfor %}   
+       
+{% block contend %}
+  <! contenido de la pagina >
+{% endblock %}  
+
+
+    <!-- Bootstrap -->
+    <script src="{% static 'appwev/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'appwev/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+
+
+
+
+
+
+
+
+def buscar(request):
+    if 'search' in request.GET:
+        search = request.GET['search']
+        producto =producto.objects.filter(name__icontains=search)
+    else:
+        producto = producto.objects.all()
+        context = {
+             'producto': producto,
+    }
+    return render(request,'tienda.html',context={'producto': producto,})
+
+def listar_producto(request):
+    producto=Producto.objects.all()
+    return render(request,"apptienda/tienda.html",{'producto':producto,})
