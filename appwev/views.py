@@ -8,7 +8,3 @@ def tienda(request):
     
     return render(request,'appwev/tienda.html')
 
-
-def contacto(request):
-    
-    return render(request,'appwev/contacto.html')

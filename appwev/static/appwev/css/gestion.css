@@ -103,7 +103,7 @@ p {
     font-size: 0.9rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(198, 186, 186, 0.4);
     text-decoration: underline;
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
@@ -229,7 +229,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(24, 64, 8, 0.8);
+  background-color: rgba(24, 64, 8, 0.8);
 }
 
 
@@ -278,7 +278,23 @@ ul.errorlist{
   color: red;
 }
 
-.linksCategorias{
-  color: white!important;
-  text-decoration: underline;
-}  
+
+.linksCategoria{
+  color: white !important;
+  text-decoration: anderline;
+  background-color: rgb(88, 214, 38);
+}
+.linksCategoria:hover{
+ 
+  text-decoration:none;
+  
+}
+
+.contenedorForm{
+
+  background-color: rgba(24, 64, 8);
+  width: 50%;
+  margin: 20px auto;
+  border-radius: 10px; 
+  padding: 1px 0px;;   
+ }

@@ -36,13 +36,13 @@
 
 <seccion>
 
-<div style="width: 75%; text-align:center;color:rgb(247, 239, 239) ; margin:auto;">
+<div style="width: 75%; text-align:center;color:white ; margin:auto;">
 
 categorias:
 {% for post in post %}
 {% for categoria in post.categorias.all %}&nbsp;&nbsp;&nbsp;
 
-<a href="{% url 'categoria' categoria.id %}" class="linksCategorias">{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
+<a href="{% url 'categoria' categoria.id %}";>{{categoria.nombre}}</a> &nbsp;&nbsp;&nbsp;
 
 {% endfor %}
 {% endfor %}
